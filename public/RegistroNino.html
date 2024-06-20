@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Niño</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <img src="/Imagenes/no-hace-falta-estar-loco-para-ir-al-psicologo.jpg" alt="">
+    </div>
+    <div class="right-column">
+      <div class="content">
+        <div class="form-box">
+          <h2>Ingresa Tus Datos</h2>
+          <form id="childRegistrationForm" action="/api/registro-nino" method="POST">
+            <input type="hidden" id="userId" name="userId" required>
+
+            <label for="id_tutor">ID del Tutor:</label>
+            <input type="text" id="id_tutor" name="id_tutor" required>
+
+            <label for="nombre">Nombre(s):</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="snombre">Segundo Nombre:</label>
+            <input type="text" id="snombre" name="snombre">
+
+            <label for="apellido">Apellido(s):</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="sapellido">Segundo Apellido:</label>
+            <input type="text" id="sapellido" name="sapellido">
+
+            <label for="fechanacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechanacimiento" name="fechanacimiento" required>
+
+            <button type="submit">Registrarse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/NiñoRegistracion.js"></script>
+</body>
+</html>

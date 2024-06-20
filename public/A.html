@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="Es">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="/Imagenes/CuteCore.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="/estilos2.css">
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css">
+    <title>Agendar cita</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="container-fluid col-md-1 align-items-start position-absolute top-0 start-0">
+            <!-- navBar -->
+            <div class=" D-Icono position-absolute top-0 start-0">
+                <a class="align-items-center" data-bs-toggle="offcanvas" href="#AbirMenuLateral" role="button"aria-controls="AbirMenuLateral"><img src="/Imagenes/Motivation.jpg" alt="" class="Imagen-Icono img-fluid"></a>
+            </div>
+        </div>
+        <div class="container-fluid col-md-10 align-items-end">
+            <div class="row container-fluid overflow-visible  align-items-center D-Superior">
+                <div class="col-md-2 row align-items-start">
+                    <img src="/Imagenes/Logo.jpg" alt="" class="Imagen-Logo img-fluid float-start">
+                </div>
+                <div class="col-md-8 align-items-Start">
+                    <h1 class="Titulo-P">MMSJ - Agendar cita</h1>
+                </div>
+            </div>
+            <br>
+            <!-- Sección: buscar profesional -->
+            <div class="row container-fluid D-Cuerpo overflow-auto">
+                <div class="row align-items-center text-center">
+                    <h2 class="Titulo-S">Escogida del profesional</h2>
+                </div>
+                <div class="row align-items-center text-center">
+                    <p class="Subtitulo1">Bienvenida</p>
+                </div>
+                <br>
+                <div class="align-items-center">
+
+                    <a class="btn D-Cart" data-bs-toggle="modal" href="#exampleModalToggle1" role="button" style="width: 100%;">
+                        <div class=" align-items-center">
+                            <div class="row">
+                                <div class="container-fluid col-md-3">
+                                    <img src="/Imagenes/Consejo.jpg" alt="" class=" Imagen-PerfilC img-fluid">
+                                </div>
+                                <div class="container-fluid col-md-9">
+                                    <div class="row">
+                                        <h3 class=" Titulo-S text-center"><b>Nombre completo a continuación</b></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+            <br>
+            <!-- Sección: Motivos -->
+            <div class="row container-fluid D-Cuerpo">
+                <div class="row align-items-center text-center">
+                    <h2 class="Titulo-S">¿Motivos?</h2>
+                </div>
+                <div class="row align-items-cente text-center">
+                    <p class="Subtitulo1">Nos importaría saber el porque usted desea agendar esta cita</p>
+                </div>
+                <br>
+                <div class="row D-Seccion2 text-center container-fluid">
+                    <label for="areaAyuda" class="Desvanecido1">Motivos</label>
+                    <textarea id="areaAyuda"></textarea>
+                </div>
+                <div class="row D-Seccion2 text-center container-fluid">
+                    <label for="areaAyuda" class="Desvanecido1">Área que desea recibir ayuda</label>
+                    <textarea id="areaAyuda"></textarea>
+                </div>
+                <div class="row D-Seccion2 text-center container-fluid">
+                    <label for="areaAyuda" class="Desvanecido1">Que espera de esta cita</label>
+                    <textarea id="areaAyuda"></textarea>
+                </div>
+
+            </div>
+            <br>
+            <div class="row container-fluid D-Cuerpo">
+                <div class="row align-items-center text-center">
+                    <h2 class="Titulo-S">Datos de registro</h2>
+                    <p class="Subtitulo1">Datos solo para poder agendarte su cita</p>
+                </div>
+                <div>
+                    <label for="fechaCita" class="Desvanecido1">Seleccione la fecha en la que desea agendar</label>
+                    <input type="date" id="fechaCita">
+                </div>
+                <br>
+                <!-- Botón con opciones desplegables -->
+                <div class="dropdown data-bs-toggle="modal" href="#exampleModalToggle1" role="button" style="width: 100%;">
+                    <button class="btn  D-Cart dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 90%;">
+                        <div class=" align-items-center">
+                            <div class="row">
+                                <div class="container-fluid col-md-9">
+                                    <div class="row">
+                                        <h6 class=" Titulo-S text-center"><b>Precione aqui para escoger la modalidad en la cual quiere agendar la cita</b></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalTeams">Teams</button></li>
+                        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalZoom">Zoom</button></li>
+                        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalGoogleMeet">Google Meet</button></li>
+                        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalEnPersona">En persona</button></li>
+                    </ul>
+                </div>
+                <br>
+                <div class="row col-md-2">
+                    <button type="button"  class="btn D-Boton1 Contenido1" data-bs-target="#paymentModal" data-bs-toggle="modal" role="button">Agendar cita</button>
+                </div>
+                </div>
+
+        </div>
+            <br>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="modal fade" id="exampleModalToggle1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content D-Modal">
+            <div class="modal-header">
+                <h5 class="modal-title Titulo-P" id="exampleModalToggleLabel1"><b>Datos del profesional</b></h5>
+            </div>
+            <div class="modal-body D-Modal2">
+
+
+                <div class="row container-fluid align-items-center">
+                    <div class="col-md-3 overflow-auto">
+                        <div class="row"><img src="/Imagenes/PerfilV.jpg" alt="" class="Imagen-G mx-auto img-fluid float-start"></div>
+                        <div class="row  D-Seccion"><div class="D-Boton2"><p class=" Desvanecido1"><b>Opiniones: </b>Pediatra</p></div></div>
+                    </div>
+                    <div class="col-md-8 D-Seccion">
+                        
+                        <div class="row">
+                            <h5 class="Subtitulo1 text-center">Nombre1 nombre2 Apellido1 Apellido2</h5>
+                        </div>
+                        <br>
+                        <div class="row D-Boton2 col-md-10"><p class=" Desvanecido1"><b>Área general: </b>Pediatra</p></div>
+                        <br>
+                        <div class="row D-Boton2 col-md-10"><p class=" Desvanecido1"><b>Área especifica: </b>Depresión infantil</p></div>
+                    </div>
+                </div>
+                <br>
+                <div class="row container-fluid align-items-center">
+                    <div class="D-Seccion">
+                        <div class="row">
+                            <h5 class="Subtitulo1 text-center">Presentación</h5>
+                        </div>
+                        <br>
+                        <div class="row D-Boton2 col-md-10"><p class=" Desvanecido1">Hola a todos. Me llamo Alejandro, estoy aquí para brindar apoyo a infantes que pasan por situaciones tan complicadas. “Un niño no debe pasar por situaciones de este tipo, deben disfrutar su infancia ...”</p></div>
+                </div>
+                <br>
+                <div class="row container-fluid D-Seccion align-items-center">
+                    <div class="row">
+                        <h5 class="Subtitulo1 text-center">Información básica</h5>
+                    </div>  
+                    <br>
+                    <div class="row D-Boton2"><p class=" Desvanecido1"><b>Nombre: </b>Alejandro Gonzales Perez</p></div>
+                    <br>
+                    <div class="row D-Boton2"><p class=" Desvanecido1"><b>Dirección: </b>Yuc, Merida, Col.centro, 65 x 67 y 68 #34 A</p></div>
+                    <br>
+                    <div class="row D-Boton2"><p class=" Desvanecido1"><b>Número telefonico: </b>+52 999 012 3456</p></div>
+                    <br>
+                    <div class="row D-Boton2"><p class=" Desvanecido1"><b>Correo: </b>Alejandro.Matraca@mmsj.prof.mx</p></div>
+                </div>
+                <br>
+                <div class="row container-fluid D-Seccion align-items-center">
+                    <div class="row">
+                        <h5 class="Subtitulo1 text-center">Historial de citas</h5>
+                    </div>
+                    <br>
+                    <div class="row D-Boton2 col-md-10"><p class=" Desvanecido1"><b>Número de citas completas con exito: </b>87</p></div>
+                    <br>
+                    <div class="row D-Boton2 col-md-10"><p class=" Desvanecido1"><b>Número de citas canceladas por usuario: </b>87</p></div>
+                    <br>
+                    <div class="row D-Boton2 col-md-10"><p class=" Desvanecido1"><b>Número de citas canceladas por Alejandro: </b>87</p></div>
+                    <br>
+                    <div class="row D-Boton2 col-md-10"><p class=" Desvanecido1"><b>Número de citas pendientes de Alejandro: </b>56</p></div>
+                </div>
+                <br>
+                <div class="row container-fluid D-Seccion align-items-center">
+                    <div class="row">
+                        <h5 class="Subtitulo1 text-center">Estado</h5>
+                    </div>
+                    <br>
+                    <div class="row D-Boton2 col-md-10"><p class=" Desvanecido1"><b>Probalida de aceptar solicitud para cita: </b>87%</p></div>
+                    <br>
+                    <div class="row D-Boton2 col-md-10"><p class=" Desvanecido1"><b>Estado: </b>Ocupado por citas pendientes.</p></div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn D-Boton1" data-bs-dismiss="modal"style="margin:auto;"><b class=" Titulo-P">Regresar atras</b></button>
+                <a href="/AgendarCitaU.html" type="button" class="btn D-Boton1" style="margin:auto;"><b class=" Titulo-P">Agendar cita</b></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal de Teams -->
+<div class="modal fade" id="modalTeams" modal fade" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" tabindex="-1"">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Teams</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body D-Modal2">
+                Aquí va el contenido del modal de Teams.
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Zoom -->
+<div class="modal fade" id="modalZoom" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Zoom</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Aquí va el contenido del modal de Zoom.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Google Meet -->
+<div class="modal fade" id="modalGoogleMeet" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Google Meet</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Aquí va el contenido del modal de Google Meet.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de En Persona -->
+<div class="modal fade" id="modalEnPersona" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">En Persona</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Aquí va el contenido del modal de En Persona.
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Botón para abrir el modal -->
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="paymentModalLabel">Selecciona método de pago</h5>
+            </div>
+            <div class="modal-body">
+            <!-- Botones para seleccionar el método de pago -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#creditCardModal" data-bs-dismiss="modal">
+                Tarjeta de Crédito
+            </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#debitCardModal" data-bs-dismiss="modal">
+                Tarjeta de Débito
+            </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paypalModal" data-bs-dismiss="modal">
+                Paypal
+            </button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Tarjeta de Crédito -->
+    <div class="modal fade" id="creditCardModal" tabindex="-1" aria-labelledby="creditCardModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="creditCardModalLabel">Ingresa los datos de tu Tarjeta de Crédito</h5>
+            </div>
+            <div class="modal-body">
+            <!-- Formulario para los datos de la tarjeta de crédito -->
+            <form>
+                <div class="mb-3">
+                <label for="cardName" class="form-label">Nombre del titular</label>
+                <input type="text" class="form-control" id="cardName" placeholder="Como aparece en la tarjeta">
+                </div>
+                <div class="mb-3">
+                <label for="cardNumber" class="form-label">Número de la tarjeta</label>
+                <input type="text" class="form-control" id="cardNumber" placeholder="Sin espacios ni guiones">
+                </div>
+                <div class="mb-3">
+                <label for="cardExpiry" class="form-label">Fecha de vencimiento</label>
+                <input type="text" class="form-control" id="cardExpiry" placeholder="MM / AA">
+                </div>
+                <div class="mb-3">
+                <label for="cardCVV" class="form-label">Código de seguridad (CVV)</label>
+                <input type="text" class="form-control" id="cardCVV" placeholder="3 últimos dígitos">
+                </div>
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#successfulPaymentModal" data-bs-dismiss="modal">Enviar</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal para Tarjeta de Débito -->
+    <div class="modal fade" id="debitCardModal" tabindex="-1" aria-labelledby="debitCardModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="debitCardModalLabel">Ingresa los datos de tu Tarjeta de Débito</h5>
+            </div>
+            <div class="modal-body">
+            <!-- Formulario para los datos de la tarjeta de débito -->
+            <form>
+                <div class="mb-3">
+                <label for="cardName" class="form-label">Nombre del titular</label>
+                <input type="text" class="form-control" id="cardName" placeholder="Como aparece en la tarjeta">
+                </div>
+                <div class="mb-3">
+                <label for="cardNumber" class="form-label">Número de la tarjeta</label>
+                <input type="text" class="form-control" id="cardNumber" placeholder="Sin espacios ni guiones">
+                </div>
+                <div class="mb-3">
+                <label for="cardExpiry" class="form-label">Fecha de vencimiento</label>
+                <input type="text" class="form-control" id="cardExpiry" placeholder="MM / AA">
+                </div>
+                <div class="mb-3">
+                <label for="cardCVV" class="form-label">Código de seguridad (CVV)</label>
+                <input type="text" class="form-control" id="cardCVV" placeholder="3 últimos dígitos">
+                </div>
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#successfulPaymentModal" data-bs-dismiss="modal">Enviar</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal para Paypal -->
+    <div class="modal fade" id="paypalModal" tabindex="-1" aria-labelledby="paypalModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="paypalModalLabel">Ingresa los datos de tu cuenta de Paypal</h5>
+            </div>
+            <div class="modal-body">
+            <!-- Formulario para los datos de Paypal -->
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal para Pago Exitoso -->
+    <div class="modal fade" id="successfulPaymentModal" tabindex="-1" aria-labelledby="successfulPaymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="successfulPaymentModalLabel">Pago Exitoso</h5>
+            </div>
+            <div class="modal-body">
+            Tu pago se ha realizado con éxito. ¡Gracias por tu compra!
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Inicio del menú lateral -->
+    <div class="offcanvas offcanvas-start D-Nav-F" tabindex="-1" id="AbirMenuLateral"
+        aria-labelledby="offcanvasExampleLabel">
+
+        <!-- Cabecera del menú -->
+        <div class="offcanvas-header align-items-center">
+            <div class="align-items-md-center "> 
+                <img src="/Imagenes/HopeCore.jpg" alt="" class="Imagen-PerfilV img-fluid float-start">
+            </div>
+        </div>
+
+        <!-- Cuerpo del menú -->
+        <div class="offcanvas-body overflow-hidden">
+            <!-- Opción para ver el perfil -->
+            <div class="row container-fluid text-center">
+                <button class="btn align-items-start" type="button"><a class="dropdown-item" href="/PerfilU.html"><b class="Contenido1">Ver perfil</b></a></button>
+            </div>
+            <br>
+            <!-- Opción para explorar profesionales -->
+            <div class="row container-fluid">
+                <button class="btn align-items-start D-Boton1" type="button"><a class="dropdown-item" href="/ExplorarProfesionalesU.html"><b class="Contenido1">Explorar profesionales</b></a></button>
+            </div>
+            <br>
+            <!-- Opciones del historial de citas -->
+            <div class="row container-fluid">
+                <button class="btn dropdown-toggle align-items-start D-Boton1 Contenido1" type="button" id="Boton1"data-bs-toggle="dropdown"><b>Historial de tus citas</b></button>
+                <ul class="dropdown-menu" aria-labelledby="Boton1">
+                    <!-- Opciones de citas -->
+                    <li><a class="dropdown-item D-Boton2 Contenido1" href="/AgendarCitaU.html"><b>Agendar Cita</b></a></li>
+                    <li><a class="dropdown-item D-Boton2 Contenido1" href="/CitasProximasU.html"><b>Citas por venir</b></a></li>
+                    <li><a class="dropdown-item D-Boton2 Contenido1" href="/CitasCompletadasU.html"><b>Citas finalizadas</b></a></li>
+                    <li><a class="dropdown-item D-Boton2 Contenido1" href="/CitasCanceladasU.html"><b>Citas Canceladas</b></a></li>
+                    <li><a class="dropdown-item D-Boton2 Contenido1" href="/SolicitudesPendientesU.html"><b>Solicitudes pendientes</b></a></li>
+                </ul>
+            </div>
+            <br>
+            <!-- Información acerca de la app y la organización -->
+            <div class="row container-fluid">
+                <button class="btn dropdown-toggle align-items-start D-Boton1 Contenido1" type="button" id="Boton1" data-bs-toggle="dropdown"><b>Sobre nosotros y la app</b></button>
+                <ul class="dropdown-menu" aria-labelledby="Boton1">
+                    <li><a class="dropdown-item D-Boton2 Contenido1" href="/Equipo.html"><b>¿Quienes somos?</b></a></li>
+                    <li><a class="dropdown-item D-Boton2 Contenido1" href="/Proyecto.html"><b>El proposito de MMJB</b></a></li>
+                </ul>
+            </div>
+            <br>
+            <!-- Ayuda para entender la salud mental -->
+            <div class="row container-fluid">
+                <button class="btn dropdown-toggle align-items-start D-Boton1 Contenido1" type="button" id="Boton1" data-bs-toggle="dropdown"><b>Necesitas ayuda para entender</b>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="Boton1">
+                    <li><a class="dropdown-item D-Boton2 Contenido1" href="https://www.who.int/es/news-room/fact-sheets/detail/mental-health-strengthening-our-response" target="_blank"><b>La salud mental</b></a></li>
+                    <li><a class="dropdown-item D-Boton2 Contenido1" href="https://teleton.org/la-importancia-de-la-salud-mental/" target="_blank"><b>Importancia de la salud mental</b></a></li>
+                </ul>
+            </div>            <br>
+            <!-- Opción para cerrar la sesión -->
+            <div class="row container-fluid">
+                <button class="btn align-items-start D-Boton2" type="button"><a class="dropdown-item" href="/PaginaPrincipal.html"><b class="Contenido1">Cerrar sesión</b></a></button>
+            </div>
+        </div>
+    </div>
+    <!-- Fin del menú lateral -->
+
+
+    <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

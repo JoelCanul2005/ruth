@@ -17,10 +17,6 @@ db.connect(err => {
     console.log('Conectado a la base de datos');
 });
 
-
-
-
-
 // Verificar correo electrónico único
 const verificarCorreoUnico = (email) => {
     return new Promise((resolve, reject) => {
@@ -221,8 +217,6 @@ exports.registrarDatosNino = (req, res) => {
 
 exports.login =(req, res)=>{
     const { email, password } = req.body;
-    res.cookie('userId', userId, { httpOnly: true }); // userId es el ID del usuario autenticado
-    res.status(200).json({ success: true, userId: userId });
 
   // Consultar la base de datos para obtener el rol del usuario
   const sql = 'SELECT id, role FROM usuarios WHERE email = ? AND password = ?';
@@ -297,8 +291,6 @@ exports.gestionarCita = (req, res) => {
 };
 
 
-// En tu controlador registroController.js
-// En tu controlador registroController.js
 
 // Función para obtener todos los profesionales
 exports.obtenerProfesionales = (req, res) => {

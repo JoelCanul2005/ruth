@@ -36,8 +36,19 @@
             </ul>
         </div>
         <div class="menu-section">
-            <button class="btn"><a href="/">Cerrar sesión</a></button>
+            <button class="btn" id="logoutButton">Cerrar sesión</button>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('logoutButton').addEventListener('click', () => {
+                    // Eliminar todos los datos del localStorage
+                    localStorage.clear();
+                    
+                    // Redirigir a la página principal
+                    window.location.href = '/';
+                });
+            });
+            </script>
     </div>
 </div>
  <!-- final del menu lateral -->

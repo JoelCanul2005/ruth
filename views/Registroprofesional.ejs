@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Profesional</title>
+  <link rel="stylesheet" href="css/Principal/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <img src="/Imagenes/psicologa-terceira-idade-sentada-no-sofa-curso-de-psicologia.jpg" alt="">
+    </div>
+    <div class="right-column">
+      <div class="content">
+        <div class="form-box">
+          <h2>Envianos Un Correo con tus datos</h2>
+          <h2>Ponen aca los d</h2>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/Principal/Proferegistracion.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verificar la clave de autorización en localStorage
+        const claveAutorizacionAdulto = localStorage.getItem('claveAutorizacionAdulto');
+
+        if (claveAutorizacionAdulto) {
+            // Redirigir al inicio de sesión si no hay clave
+            window.location.href = '/A';
+        }
+    });
+  </script>
+</body>
+</html>

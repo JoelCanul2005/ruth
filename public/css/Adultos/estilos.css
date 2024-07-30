@@ -1,0 +1,281 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: relative;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    animation: fade-in 2s ease-in-out;
+}
+
+/* Open Button */
+.open-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+}
+
+.hero {
+    background: url('background.jpg') no-repeat center center/cover;
+    color: #000000;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h2 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    animation: slide-in 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    animation: fade-in 2s ease-in-out;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.about,
+.purpose {
+    padding: 2rem 0;
+}
+
+.about-content,
+.purpose-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.about-content img,
+.purpose-content img {
+    width: 50%;
+    border-radius: 10px;
+    margin-right: 2rem;
+    animation: fade-in 3s ease-in-out;
+}
+
+.text {
+    max-width: 50%;
+}
+
+.text h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 2rem;
+}
+
+.text p {
+    font-size: 1rem;
+    animation: slide-in 2s ease-in-out;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    animation: fade-in 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Menu Button */
+.open-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #333333; 
+    border: none;
+    margin-left: 10px;
+    left: 20px;
+}
+
+/* Side Menu */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: width 0.5s, transform 0.5s;
+    padding-top: 60px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.side-menu.open {
+    width: 250px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.side-menu.closing {
+    transform: translateX(-250px);
+}
+
+.side-menu .menu-content {
+    padding: 8px 32px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.side-menu.open .menu-content {
+    opacity: 1;
+}
+
+.side-menu .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    color: #fff;
+}
+
+/* Dropdown Menu */
+.menu-section {
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: #ddd;
+}
+
+.dropdown-toggle::after {
+    content: " ▼";
+    font-size: 12px;
+    color: #fff;
+}
+/**posible error**/
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    padding-left: 20px;
+    margin: 0;
+    list-style: none;
+}
+
+.dropdown-menu.active {
+    display: flex;
+}
+
+.dropdown-item {
+    color: #ffffffc5;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: small;
+}
+
+.dropdown-item:hover {
+    background-color: #444;
+    color: #ddd;
+}
+
+/* Appointment Button */
+.create-appointment button {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.create-appointment button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

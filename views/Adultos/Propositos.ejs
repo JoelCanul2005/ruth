@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propósito de WebPsy</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>WebPsy</h1>
+        </div>
+        <button class="open-btn" onclick="openMenu()">☰</button>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Propósito de WebPsy</h2>
+                <p>En WebPsy, nuestro propósito es ofrecer herramientas y recursos que faciliten el acceso a servicios psicológicos de calidad.</p>
+            </div>
+        </section>
+        <section class="purpose">
+            <div class="container">
+                <div class="purpose-content">
+                    <img src="reunion-empresarios-oficina-trabajo_23-2148908910.avif" alt="Nuestra misión" class="fade-in">
+                    <div class="text slide-in">
+                        <h3>Nuestra Misión</h3>
+                        <p>Fomentar el bienestar mental a través de la tecnología, brindando apoyo y orientación en momentos difíciles. Queremos que todos tengan acceso a la ayuda psicológica que necesitan.</p>
+                    </div>
+                </div>
+                <div class="purpose-content">
+                    <img src="67838751-gente-de-negocios-trabajando-en-sala-de-juntas-en-la-computadora-portátil-en-la-oficina-hombres.jpg" alt="Nuestra visión" class="fade-in">
+                    <div class="text slide-in">
+                        <h3>Nuestra Visión</h3>
+                        <p>Convertirnos en la opción principal para los usuarios cuando se hable de psicología en línea. Con el tiempo, implementaremos más opciones en la página para hacer que tu experiencia sea la mejor y más agradable posible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Menú lateral -->
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <div class="menu-content">
+            <div class="menu-section">
+                <button class="btn"><a href="/perfil.html">Ver Perfil</a></button>
+            </div>
+            <div class="menu-section">
+                <button class="btn dropdown-toggle" onclick="toggleDropdown(this)">Historial de Citas</button>
+            </div>
+            <div class="menu-section">
+                <button class="btn dropdown-toggle" onclick="toggleDropdown(this)">Sobre Nosotros</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/equipo.html">¿Quiénes Somos?</a></li>
+                    <li><a class="dropdown-item" href="/proyecto.html">El Propósito de WebPsy</a></li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <button class="btn dropdown-toggle" onclick="toggleDropdown(this)">Ayuda</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.who.int/es/news-room/fact-sheets/detail/mental-health-strengthening-our-response" target="_blank">Salud Mental</a></li>
+                    <li><a class="dropdown-item" href="https://teleton.org/la-importancia-de-la-salud-mental/" target="_blank">Importancia de la Salud Mental</a></li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <button class="btn"><a href="/pagina-principal.html">Cerrar Sesión</a></button>
+            </div>
+        </div>
+    </div>
+    <!-- Final del menú lateral -->
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 WebPsy. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

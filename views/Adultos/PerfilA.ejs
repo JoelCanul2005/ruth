@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            border-radius: 8px;
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .list-group-item {
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        .list-group-item i {
+            margin-right: 10px;
+            color: #007bff;
+        }
+        .btn-regresar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <button class="btn btn-primary btn-regresar" onclick="window.history.back()">
+            <i class="fas fa-arrow-left"></i> Regresar
+        </button>
+        <h1 class="text-center mb-4">Perfil de Usuario</h1>
+        <div id="perfil" class="card shadow">
+            <div class="card-body">
+                <!-- Perfil de Usuario se insertará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Obtener la clave de autorización desde el local storage
+            const claveAutorizacion = localStorage.getItem('claveAutorizacionAdulto');
+            
+            if (claveAutorizacion) {
+                // Enviar la solicitud para obtener el perfil del usuario
+                fetch('/api/perfil', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ claveAutorizacion: claveAutorizacion })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const perfil = data.perfilUsuario;
+                        const perfilDiv = document.getElementById('perfil');
+                        perfilDiv.innerHTML = `
+                            <ul class="list-group">
+                                <li class="list-group-item"><i class="fas fa-envelope"></i> <strong>Email:</strong> ${perfil.email}</li>
+                                <li class="list-group-item"><i class="fas fa-user"></i> <strong>Nombre:</strong> ${perfil.nombre} ${perfil.snombre} ${perfil.apellido} ${perfil.sapellido}</li>
+                                <li class="list-group-item"><i class="fas fa-calendar-day"></i> <strong>Fecha de Nacimiento:</strong> ${new Date(perfil.fechanacimiento).toLocaleDateString()}</li>
+                                <li class="list-group-item"><i class="fas fa-city"></i> <strong>Ciudad:</strong> ${perfil.ciudad}</li>
+                                <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> <strong>Estado:</strong> ${perfil.estado}</li>
+                                <li class="list-group-item"><i class="fas fa-home"></i> <strong>Dirección:</strong> ${perfil.direccion}</li>
+                                <li class="list-group-item"><i class="fas fa-id-card"></i> <strong>CURP:</strong> ${perfil.curp}</li>
+                            </ul>
+                        `;
+                    } else {
+                        console.error('Error al obtener el perfil:', data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error en la solicitud:', error);
+                });
+            } else {
+                console.error('Clave de autorización no encontrada en el local storage');
+            }
+        });
+    </script>
+</body>
+</html>

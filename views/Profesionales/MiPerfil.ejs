@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Profesional</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f7f6;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .profile-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .profile-card h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .profile-card p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .profile-card strong {
+            color: #333;
+        }
+        .profile-card span {
+            color: #555;
+        }
+        .btn-custom {
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .btn-primary-custom {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+        .btn-primary-custom:hover {
+            background-color: #0056b3;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <h2 class="text-center">Perfil del Profesional</h2>
+            <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+            <p><strong>Segundo Nombre:</strong> <span id="snombre"></span></p>
+            <p><strong>Apellido:</strong> <span id="apellido"></span></p>
+            <p><strong>Segundo Apellido:</strong> <span id="sapellido"></span></p>
+            <p><strong>Fecha de Nacimiento:</strong> <span id="fechanacimiento"></span></p>
+            <p><strong>Ciudad:</strong> <span id="ciudad"></span></p>
+            <p><strong>Estado:</strong> <span id="estado"></span></p>
+            <p><strong>Dirección:</strong> <span id="direccion"></span></p>
+            <p><strong>CURP:</strong> <span id="curp"></span></p>
+            <p><strong>Cédula Profesional:</strong> <span id="cedula_profesional"></span></p>
+            <p><strong>Correo:</strong> <span id="correo"></span></p>
+            <div class="text-center mt-4">
+                <button class="btn btn-primary-custom btn-custom" onclick="window.history.back()">Regresar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const obtenerPerfil = async () => {
+                let claveAutorizacion = localStorage.getItem('claveAutorizacionProfesional');
+
+                if (!claveAutorizacion) {
+                    claveAutorizacion = prompt('Introduce tu clave de autorización');
+                    if (!claveAutorizacion) {
+                        alert('La clave de autorización es necesaria');
+                        return;
+                    }
+                    localStorage.setItem('claveAutorizacionProfesional', claveAutorizacion);
+                }
+
+                try {
+                    const response = await fetch('/api/obtener-perfil', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ claveAutorizacion })
+                    });
+
+                    const data = await response.json();
+                    if (data.success) {
+                        mostrarPerfil(data.profesional);
+                    } else {
+                        console.error('Error al obtener el perfil:', data.error);
+                    }
+                } catch (error) {
+                    console.error('Error al obtener el perfil:', error);
+                }
+            };
+
+            const mostrarPerfil = (profesional) => {
+                document.getElementById('nombre').textContent = profesional.nombre;
+                document.getElementById('snombre').textContent = profesional.snombre;
+                document.getElementById('apellido').textContent = profesional.apellido;
+                document.getElementById('sapellido').textContent = profesional.sapellido;
+                document.getElementById('fechanacimiento').textContent = profesional.fechanacimiento;
+                document.getElementById('ciudad').textContent = profesional.ciudad;
+                document.getElementById('estado').textContent = profesional.estado;
+                document.getElementById('direccion').textContent = profesional.direccion;
+                document.getElementById('curp').textContent = profesional.curp;
+                document.getElementById('cedula_profesional').textContent = profesional.cedula_profesional;
+                document.getElementById('correo').textContent = profesional.correo;
+            };
+
+            obtenerPerfil();
+        });
+    </script>
+</body>
+</html>

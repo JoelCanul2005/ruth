@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de Sesion</title>
+  <link rel="stylesheet" href="css/Principal/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <img src="/Imagenes/5.-Lugares-donde-trabajan-los-psicologos-min-scaled.jpg" alt="">
+    </div>
+    <div class="right-column">
+      <div class="content">
+        <div class="form-box">
+          <h2>Iniciar Sesion</h2>
+          <form id="loginForm" action="/login" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Iniciar Sesión</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal de autorización -->
+<div id="authModal" class="modal">
+  <div class="modal-content">
+      <span class="close" id="closeAuthModal">&times;</span>
+      <h2>Introduce tu clave de autorización</h2>
+      <form id="authForm">
+          <input type="text" id="authKey" placeholder="Clave de autorización" required>
+          <button type="submit">Aceptar</button>
+      </form>
+  </div>
+</div>
+
+  <script src="js/Principal/login.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verificar la clave de autorización en localStorage
+        const claveAutorizacionAdulto = localStorage.getItem('claveAutorizacionAdulto');
+
+        if (claveAutorizacionAdulto) {
+            // Redirigir al inicio de sesión si no hay clave
+            window.location.href = '/A';
+        }
+    });
+  </script>
+</body>
+</html>

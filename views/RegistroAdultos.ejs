@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Adulto</title>
+  <link rel="stylesheet" href="css/Principal/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <img src="/Imagenes/no-hace-falta-estar-loco-para-ir-al-psicologo.jpg" alt="">
+    </div>
+    <div class="right-column">
+      <div class="content">
+        <div class="form-box">
+          <h2>Ingresa Tus Datos</h2>
+          <form id="adultosregis" action="/api/registro-adulto" method="POST">
+            <input type="hidden" id="userId" name="userId" required>
+
+            <label for="nombre">Nombre :</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="snombre">Segundo Nombre:</label>
+            <input type="text" id="snombre" name="snombre">
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="sapellido">Segundo Apellido:</label>
+            <input type="text" id="sapellido" name="sapellido">
+
+            <label for="fechanacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechanacimiento" name="fechanacimiento" required>
+
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required>
+
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" required>
+
+            <label for="direccion">Direccion:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="curp">Curp:</label>
+            <input type="text" id="curp" name="curp" required>    
+
+            <button type="submit">Registrarse</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/Principal/Adultregistracion.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verificar la clave de autorización en localStorage
+        const claveAutorizacionAdulto = localStorage.getItem('claveAutorizacionAdulto');
+
+        if (claveAutorizacionAdulto) {
+            // Redirigir al inicio de sesión si no hay clave
+            window.location.href = '/A';
+        }
+    });
+  </script>
+</body>
+</html>
